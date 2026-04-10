@@ -1,1 +1,1 @@
-console.log("Website geladen");
+console.log("Konditorei Heldrich Website geladen");

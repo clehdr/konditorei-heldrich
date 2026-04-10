@@ -374,3 +374,53 @@ body {
   margin: 0;
   color: var(--muted);
 }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.contact-card h3,
+.contact-wide-card h3 {
+  margin-top: 0;
+  color: #111111;
+}
+
+.contact-card a,
+.contact-wide-card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-card a:hover,
+.contact-wide-card a:hover {
+  text-decoration: underline;
+}
+
+.opening-hours {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.opening-hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-info-box {
+  margin-top: 1.5rem;
+}
+
+.contact-wide-card {
+  padding: 1.8rem;
+}
+
+.contact-wide-card p {
+  max-width: 800px;
+  color: var(--muted);
+}

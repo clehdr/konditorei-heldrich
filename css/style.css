@@ -28,12 +28,13 @@ body {
 }
 
 .site-header {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.18);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .header-inner {
@@ -48,28 +49,54 @@ body {
 .logo {
   margin: 0;
   color: var(--primary);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .main-nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .main-nav a {
   text-decoration: none;
   color: #111111;
-  font-weight: bold;
+  font-weight: 700;
   position: relative;
+  padding: 0.35rem 0;
+  transition: color 0.25s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
   color: var(--primary);
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), #e0c15a);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.main-nav a.active {
+  font-weight: 800;
 }
 
 .hero {
@@ -281,7 +308,9 @@ body {
   .hero-grid,
   .feature-grid,
   .contact-grid,
-  .news-grid{
+  .news-grid,
+  .about-grid,
+  .about-values-grid {
     grid-template-columns: 1fr;
   }
 
@@ -301,6 +330,14 @@ body {
 
   .main-nav ul {
     gap: 0.7rem;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
   }
 }
 
@@ -489,4 +526,53 @@ body {
 
 .text-link:hover {
   text-decoration: underline;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text-card h3,
+.about-highlight-card h3,
+.value-card h3,
+.about-story h3 {
+  margin-top: 0;
+  color: #111111;
+}
+
+.about-highlight-card {
+  background: linear-gradient(to right, #b8921a, #d4af37);
+  color: white;
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+}
+
+.about-highlight-card .eyebrow {
+  color: #fff3c9;
+}
+
+.about-highlight-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.value-card p,
+.about-story p,
+.about-text-card p {
+  color: var(--muted);
+}
+
+.about-story {
+  padding: 1.6rem;
 }

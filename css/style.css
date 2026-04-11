@@ -56,10 +56,10 @@ body {
 
 .brand-logo,
 .brand-area img {
-  height: 88px !important;
+  height: 46px !important;
   width: auto !important;
-  max-height: 88px !important;
-  max-width: 88px !important;
+  max-height: 46px !important;
+  max-width: 46px !important;
   object-fit: contain !important;
   display: block !important;
   flex-shrink: 0;
